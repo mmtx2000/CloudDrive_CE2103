@@ -1,0 +1,13 @@
+# ninja log v5
+359	451	0	BorradorProyecto3_autogen/mocs_compilation.cpp	cc93defed272b992
+359	451	0	/home/pablo/CLionProjects/BorradorProyecto3/cmake-build-debug/BorradorProyecto3_autogen/mocs_compilation.cpp	cc93defed272b992
+2074	2366	1654851789975077251	BorradorProyecto3	20b77108caa66164
+51	2633	1654917709804213332	CMakeFiles/FileStream.dir/main.cpp.o	78e45be4c94b90ba
+0	51	0	/home/pablo/CLionProjects/BorradorProyecto3/cmake-build-debug/FileStream_autogen/mocs_compilation.cpp	831b96dd85851c27
+0	51	0	FileStream_autogen/mocs_compilation.cpp	831b96dd85851c27
+2635	3515	1654917710684287010	FileStream	20d80e42b5e8f480
+8	2073	1654851789683072244	CMakeFiles/BorradorProyecto3.dir/main.cpp.o	f9d6de8b92af217d
+52	414	1654917707584030762	CMakeFiles/FileStream.dir/FileStream_autogen/mocs_compilation.cpp.o	73a155acbbebc919
+1983	2890	1654842763844236917	CMakeFiles/BorradorProyecto3.dir/BorradorProyecto3_autogen/mocs_compilation.cpp.o	7b6b0d89d68c2fce
+1	636	1654917754440666638	CMakeFiles/FileStream.dir/main.cpp.o	65f438813168ef8f
+636	768	1654917754572681536	FileStream	a5ee9063f5710f87
