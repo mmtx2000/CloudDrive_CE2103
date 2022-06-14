@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
-import Counter from './components/counter';
+import HomeScreen from './components/homeScreen';
+import LoginScreen from './components/loginScreen';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
   <React.StrictMode>
-    <Counter />
+  <Routes>
+      <Route path="/" element={<HomeScreen />} />
+      <Route path="login" element={<LoginScreen />} />
+      
+    </Routes>
   </React.StrictMode>
   </BrowserRouter>
 );
