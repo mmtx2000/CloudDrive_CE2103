@@ -9,6 +9,7 @@ import LoginScreen from './components/loginScreen';
 import RegisterScreen from './components/registerScreen';
 import UserScreen from './components/userScreen';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
@@ -17,7 +18,7 @@ root.render(
       <Route path="/" element={<HomeScreen />} />
       <Route path="login" element={<LoginScreen />} />
       <Route path="register" element={<RegisterScreen/>} />
-      <Route path="User" element={<UserScreen/>} />
+      <Route path='user' element={<UserScreen/>}/>
       
     </Routes>
   </React.StrictMode>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {fetchAPI} from './CallAPIService.js';
+
 import {Link} from "react-router-dom";
 
 

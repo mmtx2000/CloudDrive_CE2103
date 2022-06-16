@@ -1,13 +1,13 @@
 //const { MongoClient }= require('mongodb');
 import {MongoClient} from "mongodb"
-async function main(){
+async function connectDB(){
     const uri = "mongodb+srv://projectApiManager:hjO95g-53f@cluster1beta.a0ttd.mongodb.net/?retryWrites=true&w=majority";
 
     const client = new MongoClient(uri);
     try{
         await client.connect();
 
-        await deleteListingByName(client, "Testing the database 1");
+        await createListing(client, {username: "daniel huele feo",password: "piporin"});
 
         
     } catch (e) {
@@ -27,7 +27,7 @@ async function deleteListingByName(client, nameOfListing){
 
 
 async function findOneListingbyName(client, nameOfListing){
-    const result=await client.db("testDatabase").collection("testCollection").findOne({name:nameOfListing});
+    const result=await client.db("testDatabase").collection("loginCollectionTest").findOne({name:nameOfListing});
 
     if(result){
         console.log(`Found a listing in the collection with the name '${nameOfListing}'`);
@@ -35,7 +35,7 @@ async function findOneListingbyName(client, nameOfListing){
     }else{
         console.log(`No listings found with the name '${nameOfListing}'`);
     }
-
+    return result;
 }
 
 
@@ -48,7 +48,7 @@ async function createMultipleListings(client, newListings){
 
 //creates a listing to add to the mongodb 
 async function createListing(client, newListing){
-    const result = await client.db("testDatabase").collection("testCollection").insertOne(newListing);
+    const result = await client.db("testDatabase").collection("loginCollectionTest").insertOne(newListing);
     console.log(`New listing created with the following id: ${result.insertedId}`);
 }
 
