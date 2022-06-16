@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/STRINTOARRAY.dir/string_toarray.cpp.o -o STRINTOARRAY 

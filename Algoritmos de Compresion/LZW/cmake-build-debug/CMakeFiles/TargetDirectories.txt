@@ -1,0 +1,4 @@
+/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/LZW/cmake-build-debug/CMakeFiles/LZW.dir
+/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/LZW/cmake-build-debug/CMakeFiles/STRINTOARRAY.dir
+/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/LZW/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/LZW/cmake-build-debug/CMakeFiles/rebuild_cache.dir
