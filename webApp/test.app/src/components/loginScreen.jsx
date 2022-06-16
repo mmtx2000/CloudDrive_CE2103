@@ -14,11 +14,27 @@ class LoginScreen extends Component {
 
     buttonClicked =() =>{
         console.log("click");
-        //this.setState({userinput:});
-        fetchAPI(window.location.pathname,this.state.userName+this.state.userPassword).then(response => this.setState({APImessage: response}));
-        console.log(this.state.userName);
-        console.log(this.state.userPassword);
         
+        const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username: this.state.userName,
+          password: this.state.userPassword })
+      };
+        fetch('http://localhost:9000'+window.location.pathname, requestOptions);
+        
+        
+    }
+    buttonRegister=()=>{
+      console.log("click");
+        
+        const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username: this.state.userName,
+          password: this.state.userPassword })
+      };
+        fetch('http://localhost:9000'+window.location.pathname, requestOptions);
     }
 
     handleChange =(event) => {
@@ -41,17 +57,7 @@ class LoginScreen extends Component {
         <h1>CloudDrive</h1>
         </div>
         
-        <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '10vh',
         
-      }}>
-        
-        <span>{this.state.APImessage}</span>
-        </div>
-
         <div style={{
         display: 'flex',
         justifyContent: 'center',
@@ -62,6 +68,17 @@ class LoginScreen extends Component {
         <label>Username
         <input type="text" name='userName' value={this.state.value} onChange={this.handleChange}/>
         </label>
+        
+        
+        </div>
+        <div style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        
+        
+      }}>
+        
         <label>Password
         <input type="password" name='userPassword' value={this.state.value} onChange={this.handleChange}/>
         </label>
@@ -77,7 +94,9 @@ class LoginScreen extends Component {
         <button 
         onClick={this.buttonClicked}
         className = "btn btn-primary btn-sm">Log In</button>
+        
         </div>
+
         <div style={{
         display: 'flex',
         justifyContent: 'center',
@@ -87,6 +106,9 @@ class LoginScreen extends Component {
       }}>
         
         <Link to = "/"><button className = "btn btn-secondary btn-sm">Home</button></Link>
+        <Link to="/register">
+        <button className ="btn btn-primary btn-sm">Register</button>
+        </Link>
         </div>
        
     </div>; ;
