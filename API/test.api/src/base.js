@@ -7,7 +7,7 @@ async function main(){
     try{
         await client.connect();
 
-        await findOneListingbyName(client, "Testing the database 1");
+        await deleteListingByName(client, "Testing the database 1");
 
         
     } catch (e) {
@@ -18,6 +18,13 @@ async function main(){
 }
 
 main().catch(console.error);
+
+async function deleteListingByName(client, nameOfListing){
+    const result = await client.db("testDatabase").collection("testCollection").deleteOne({name: nameOfListing});
+
+    console.log(`${result.deletedCount} document(s) was/were deleted`);
+}
+
 
 async function findOneListingbyName(client, nameOfListing){
     const result=await client.db("testDatabase").collection("testCollection").findOne({name:nameOfListing});
