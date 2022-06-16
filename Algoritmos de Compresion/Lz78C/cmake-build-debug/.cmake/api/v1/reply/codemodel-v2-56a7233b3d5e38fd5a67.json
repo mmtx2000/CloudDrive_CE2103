@@ -15,8 +15,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -28,11 +27,10 @@
 					[
 						0
 					],
-					"name" : "LZW",
+					"name" : "Lz78C",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -40,16 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "LZW::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-LZW-Debug-f79d0a7456ec3da631da.json",
-					"name" : "LZW",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "STRINTOARRAY::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-STRINTOARRAY-Debug-f0ea9dc424a28dd511ff.json",
-					"name" : "STRINTOARRAY",
+					"id" : "Lz78C::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Lz78C-Debug-9bcb53d98ccdb987793a.json",
+					"name" : "Lz78C",
 					"projectIndex" : 0
 				}
 			]
@@ -58,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/pablo/CLionProjects/Proyecto_3/Finalizado/LZW/cmake-build-debug",
-		"source" : "/home/pablo/CLionProjects/Proyecto_3/Finalizado/LZW"
+		"build" : "/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/Lz78C/cmake-build-debug",
+		"source" : "/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/Lz78C"
 	},
 	"version" : 
 	{

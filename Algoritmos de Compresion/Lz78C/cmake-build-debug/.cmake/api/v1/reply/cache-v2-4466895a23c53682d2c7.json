@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/pablo/CLionProjects/Proyecto_3/Finalizado/LZW/cmake-build-debug"
+			"value" : "/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/Lz78C/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -103,7 +103,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/193/bin/cmake/linux/bin/cmake"
+			"value" : "/home/dansecan25/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/cmake/linux/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -115,7 +115,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/193/bin/cmake/linux/bin/cpack"
+			"value" : "/home/dansecan25/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/cmake/linux/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -127,7 +127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/193/bin/cmake/linux/bin/ctest"
+			"value" : "/home/dansecan25/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/cmake/linux/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -411,7 +411,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/193/bin/cmake/linux/bin/ccmake"
+			"value" : "/home/dansecan25/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/cmake/linux/bin/ccmake"
 		},
 		{
 			"name" : "CMAKE_EXECUTABLE_FORMAT",
@@ -591,7 +591,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/pablo/CLionProjects/Proyecto_3/Finalizado/LZW"
+			"value" : "/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/Lz78C"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -643,7 +643,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "/snap/clion/193/bin/ninja/linux/ninja"
+			"value" : "/home/dansecan25/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/ninja/linux/ninja"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -831,7 +831,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "LZW"
+			"value" : "Lz78C"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -875,7 +875,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/193/bin/cmake/linux/share/cmake-3.22"
+			"value" : "/home/dansecan25/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/bin/cmake/linux/share/cmake-3.22"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1095,7 +1095,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/bin/uname"
+			"value" : "/usr/bin/uname"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1114,7 +1114,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "LZW_BINARY_DIR",
+			"name" : "Lz78C_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1123,10 +1123,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/pablo/CLionProjects/Proyecto_3/Finalizado/LZW/cmake-build-debug"
+			"value" : "/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/Lz78C/cmake-build-debug"
 		},
 		{
-			"name" : "LZW_IS_TOP_LEVEL",
+			"name" : "Lz78C_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1138,7 +1138,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "LZW_SOURCE_DIR",
+			"name" : "Lz78C_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1147,7 +1147,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/pablo/CLionProjects/Proyecto_3/Finalizado/LZW"
+			"value" : "/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/Lz78C"
 		}
 	],
 	"kind" : "cache",

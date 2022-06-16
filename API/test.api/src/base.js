@@ -7,7 +7,8 @@ async function main(){
     try{
         await client.connect();
 
-        await deleteListingByName(client, "Testing the database 1");
+        //await deleteListingByName(client, "Testing the database 1");
+        await client.db("testDatabase").collection("loginsCollectionTest").insertOne({name:"Manuel23Serrano",password: "123456"});
 
         
     } catch (e) {

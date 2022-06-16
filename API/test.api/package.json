@@ -2,11 +2,11 @@
   "name": "test.api",
   "version": "1.0.0",
   "description": "api for the react test",
-  "main": "index.js",
+  "main": "base.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "node src/base.js"
   },
   "author": "chen",
   "license": "ISC",
