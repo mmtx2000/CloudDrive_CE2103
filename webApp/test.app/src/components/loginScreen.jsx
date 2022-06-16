@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
-import {fetchAPI} from './CallAPIService.js';
+
 import {Link} from "react-router-dom";
 
 
 class LoginScreen extends Component {
     state = {  
-
+    isLogged: false,
     APImessage: '',
     userName: '',
-    userPassword: ''
+    userPassword: '',
+
  } 
 
 
@@ -21,7 +22,20 @@ class LoginScreen extends Component {
           body: JSON.stringify({ username: this.state.userName,
           password: this.state.userPassword })
       };
-        fetch('http://localhost:9000'+window.location.pathname, requestOptions);
+        fetch('http://localhost:9000'+window.location.pathname, requestOptions).then(res=>res.text()).then((res) => {
+          console.log('Success:', res);
+          if(res === "true"){
+            this.setState({APImessage: "loged in!"});
+            this.setState({isLogged: true});
+          }
+            else{ 
+              this.setState({APImessage: "Wrong username or password"});}
+          
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+         
+        });
         
         
     }
@@ -55,6 +69,15 @@ class LoginScreen extends Component {
         
       }}>
         <h1>CloudDrive</h1>
+        </div>
+        <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '10vh',
+        
+      }}>
+        <span>{this.state.APImessage}</span>
         </div>
         
         
@@ -94,6 +117,10 @@ class LoginScreen extends Component {
         <button 
         onClick={this.buttonClicked}
         className = "btn btn-primary btn-sm">Log In</button>
+        {this.state.isLogged ? <Link to="/user">
+        <button className ="btn btn-primary btn-sm">Acces</button>
+        </Link> : null}
+        
         
         </div>
 
@@ -109,6 +136,7 @@ class LoginScreen extends Component {
         <Link to="/register">
         <button className ="btn btn-primary btn-sm">Register</button>
         </Link>
+        
         </div>
        
     </div>; ;
