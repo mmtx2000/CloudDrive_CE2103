@@ -1,0 +1,7 @@
+# ninja log v5
+2387	2555	1655266242680987843	HuffmanCoding	e0ff8592e942e03e
+4	2321	1654936228295430128	CMakeFiles/HuffmanCoding.dir/Node.cpp.o	f129f01d5f832b50
+2	6233	1655251810695869881	CMakeFiles/HuffmanCoding.dir/FrequencyCounter.cpp.o	34fae4d939fff034
+2	2387	1655266242512995544	CMakeFiles/HuffmanCoding.dir/main.cpp.o	ccfeb3b96f83aaca
+65	9346	1655251813815825853	CMakeFiles/HuffmanCoding.dir/Huffman.cpp.o	bbe7252440175f32
+31	10053	1655251858671234682	CMakeFiles/HuffmanCoding.dir/HuffmanUtility.cpp.o	778456d94c6e15bb
