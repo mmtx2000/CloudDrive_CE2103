@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 class RegisterScreen extends Component {
     state = {  
-
+    isRegistered: false,
     APImessage: '',
     userName: '',
     userPassword: ''
@@ -21,8 +21,21 @@ class RegisterScreen extends Component {
           body: JSON.stringify({ username: this.state.userName,
           password: this.state.userPassword })
       };
-        fetch('http://localhost:9000'+window.location.pathname, requestOptions);
-        
+        fetch('http://localhost:9000'+window.location.pathname, requestOptions)
+        .then((res) => {
+          console.log('Success:', res);
+          if(res === "true"){
+            this.setState({APImessage: "Registered!"});
+            this.setState({isRegistered: true});
+          }
+            else{ 
+              this.setState({APImessage: "????????????"});}
+          
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+         
+        });
         
     }
     buttonRegister=()=>{
@@ -97,6 +110,9 @@ class RegisterScreen extends Component {
         <button 
         onClick={this.buttonClicked}
         className = "btn btn-primary btn-sm">Register</button>
+        {this.state.isLogged ? <Link to="/login">
+        <button className ="btn btn-primary btn-sm">Log in!</button>
+        </Link> : null}
         </div>
 
         <div style={{

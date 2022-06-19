@@ -118,7 +118,7 @@ class LoginScreen extends Component {
         onClick={this.buttonClicked}
         className = "btn btn-primary btn-sm">Log In</button>
         {this.state.isLogged ? <Link to="/user">
-        <button className ="btn btn-primary btn-sm">Acces</button>
+        <button className ="btn btn-primary btn-sm">Access</button>
         </Link> : null}
         
         

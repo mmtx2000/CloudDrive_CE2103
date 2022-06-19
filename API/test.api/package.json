@@ -6,14 +6,20 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "rebuild": "node-gyp rebuild"
   },
   "author": "chen",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "formidable": "^2.0.1",
     "mongodb": "^4.7.0",
-    "mongoose": "^6.3.6"
+    "mongoose": "^6.3.6",
+    "nan": "^2.16.0"
   }
 }

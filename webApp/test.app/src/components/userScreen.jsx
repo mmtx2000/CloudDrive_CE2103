@@ -1,53 +1,60 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios  from 'axios';
+
 
 class UserScreen extends Component {
     state = { selectedFile: null } 
+
+    butooClicked =()=>{
+      fetch("http://localhost:9000/user/download").then(res => res.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        // the filename you want
+        a.download = "hifumi.png";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        alert("your file has downloaded!"); // or you know, something with better UX...
+      })
+      .catch(() => alert("oh no!"));
+    }
+
 
     onFileChange = event => {
     
         // Update the state
         this.setState({ selectedFile: event.target.files[0] });
-        this.onFileUpload();
+        //this.onFileUpload();
       
       };
 
     onFileUpload = () => {
-        const formData = new FormData();
-
-		formData.append('File', this.selectedFile);
-
-		fetch(
-			'http://localhost:9000/user',
-			{
-				method: 'POST',
-				body: formData,
-			}
-		)
-			.then((response) => response.formData())
-			.then((result) => {
-				console.log('Success:', result);
-			})
-			.catch((error) => {
-				console.error('Error:', error);
-			});
-	
-        // Create an object of formData
-        console.log("uploaded");
-        //const formData = new FormData();
-      
-        // Update the formData object
-        //formData.append(
-          //"myFile",
-          //this.state.selectedFile,
-          //this.state.selectedFile.name
-        //);
-      
+      const formData = new FormData();
+    
+      // Update the formData object
+      formData.append(
+        "myFile",
+        this.state.selectedFile,
+        this.state.selectedFile.name
+      );
+    
+      // Details of the uploaded file
+      console.log(this.state.selectedFile);
+      console.log(Array.from(formData)[1]);
+    
+      // Request made to the backend api
+      // Send formData object
+      axios.post("http://localhost:9000/user/upload", formData);
+    
         // Details of the uploaded file
-        console.log(this.state.selectedFile);
-        //console.log(formData.values);
+        //console.log(this.state.selectedFile);
         
-        //fetch("http://localhost:9000"+window.location.pathname,formData).then(res=>res.blob());
+        
+        
       };
 
       fileData = () => {
@@ -87,11 +94,12 @@ class UserScreen extends Component {
 
     render() { 
         return <div className="App">
-        <form>
-          <input type="text" />
-  
-          <input type="file" onChange={this.onFileChange} />
+        <form className='form' action='http://localhost:9000/user/upload' method='POST' encType='multipart/form-data'>
           
+  
+          <input type="file" name='upload' onChange={this.onFileChange} />
+          <input type='submit' value={"Upload"}/>
+          <button className='btn btn-primary btn-sm' onClick ={this.butooClicked}>Download!</button>
         </form>
 
         <div style={{
