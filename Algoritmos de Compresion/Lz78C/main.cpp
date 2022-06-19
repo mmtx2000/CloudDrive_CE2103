@@ -61,6 +61,63 @@ int getLowestIndex(vector<int> values, int number){
     return index;
 }
 //decodes an encoded string
+auto getTheNumber(string chain, int position, string iden){
+    string number;
+    int numberVal;
+    int lenNumber=0;
+    if(iden=="encode"){
+        for(int i=position;i<chain.size();i++){
+            if(chain[i]==':'){
+                break;
+            }else{
+                number+=chain[i];
+                lenNumber+=1;
+            }
+        }
+    }else if(iden=="dic"){
+        for(int i=position;i<chain.size();i++){
+            if(chain[i]==','){
+                break;
+            }else{
+                number+=chain[i];
+                lenNumber+=1;
+            }
+        }
+    }
+    numberVal=stoi(number);
+
+    struct returns{
+        int Number;
+        int lennumber;
+    };
+
+    return returns {numberVal, lenNumber};
+
+
+}
+auto getKey(string chain, int position){
+    string key;
+    int sizeKey=0;
+    for(int i=position;i<chain.size();i++) {
+        if (chain[i] == ':') {
+            if ((chain[i - 1] == '{') or (chain[i - 1] == ',')) {
+                key = "NU";
+            }
+            break;
+        }else if(chain[i]==','){
+            sizeKey+=1;
+        }else{
+            key+=chain[i];
+            sizeKey+=1;
+        }
+    }
+    struct returns{
+        string Key;
+        int size;
+    };
+    return returns {key,sizeKey};
+}
+
 string decoder(string encodedString, string dictionaryString){
 
     vector<char> encodedLetters;
@@ -74,14 +131,13 @@ string decoder(string encodedString, string dictionaryString){
             i+=1;
         }else{
             string number;
-            number+=encodedString[i];
-            int numberInt = stoi(number);
+            auto [numberInt,jumpNum] = getTheNumber(encodedString,i,"encode");
             encodedNumbers.push_back(numberInt);
-            encodedLetters.push_back(encodedString[i+2]);
-            i+=3;
+            encodedLetters.push_back(encodedString[i+jumpNum+1]);
+            i+=jumpNum+2;
         }
     }
-
+    
 
     //process for saving in the dictionary
     i=0;
@@ -91,46 +147,14 @@ string decoder(string encodedString, string dictionaryString){
         }else if(dictionaryString[i]=='{'){
             i+=1;
         }else{
-            string keyGet;
             int temp=i;
-            int extraStr=0;
-            while(temp<dictionaryString.size()) {
-                if (dictionaryString[temp] == ':') {
-                    if(dictionaryString[temp-1]==','){
-                        keyGet="NU";
-                    }
-                    extraStr+=1;
-                    break;
-                }else{
-                    keyGet+=dictionaryString[temp];
-                    extraStr+=1;
-                    temp+=1;
-                }
-            }
-            i+=extraStr;
-            //for storing all int strings as int
-            int valueDic;
-            char currentInt=dictionaryString[i];
-            int extras=0;
-            int currentPosInt=i;
-            string valueAsStr="";
+            auto [key, lent] = getKey(dictionaryString,i);
+            i+=lent+1;
 
-            while(currentPosInt<dictionaryString.size()){
-                if(dictionaryString[currentPosInt]==','){
-                    if(dictionaryString[currentPosInt+1]=='}'){
-                        extras+=1;
-                    }
-                    extras+=1;
-                    break;
-                } else {
-                    valueAsStr+=dictionaryString[currentPosInt];
-                    extras+=1;
-                    currentPosInt++;
-                }
-            }
-            valueDic=stoi(valueAsStr);
-            dictionary[keyGet]=valueDic;
-            i+=extras;
+            //for storing all int strings as int
+            auto [valueDic, jump]= getTheNumber(dictionaryString,i,"dic");
+            dictionary[key]=valueDic;
+            i+=jump;
         }
     }
 
@@ -229,7 +253,7 @@ int main() {
 
     string stringToEncode;
 
-    stringToEncode="ABRACADABRARABARABARA";
+    stringToEncode="ABRACADABRARABARABARAASCASCAAASAS";
 
     //encoded string
     auto [encodedString, dictionaryString]=encoding(stringToEncode);
