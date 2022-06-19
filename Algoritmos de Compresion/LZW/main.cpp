@@ -9,6 +9,14 @@
 
 
 using namespace std;
+bool valInMap(map<string, int> m, int value){
+    for(auto it = m.cbegin();it!=m.cend();++it){
+        if((*it).second==value){
+            return true;
+        }
+    }
+    return false;
+}
 vector<int> encoding(string s1)
 {
    // cout << "Encoding\n";
@@ -104,18 +112,27 @@ vector<int> string_to_vector(string str_output){
     }
     return vector_input;
 }
+
 int main() {
-    string filedata;
+    string fileData;
     string entrada_original;
     string salida_comprimida;
-    filedata = "WYS*WYGWYS*WYSWYSG";
-    vector<int> output_code = encoding(filedata);
+    fileData="AAAAA*AAWWAA**";
+    vector<int> output_code;
+
+    output_code = encoding(fileData); //vector de enteros en base binaria
+
+
     for (int i = 0; i < output_code.size(); i++) {
         salida_comprimida += to_string(output_code[i]);
         if(i!= output_code.size()-1){
             salida_comprimida +="-";
         }
     }
+
+
+
+
     entrada_original = decoding(string_to_vector(salida_comprimida));
 
     cout << salida_comprimida;

@@ -66,8 +66,80 @@ int LZ78::getLowestIndex(vector<int> values, int number){
     return index;
 }
 //decodes an encoded string
-vector<string> LZ78::decoder(vector<int> encodedNumbers, vector<char> encodedLetters, unordered_map<string, int> dictionary){
+string LZ78::decoder(string encodedString, string dictionaryString){
+
+    vector<char> encodedLetters;
+    vector<int> encodedNumbers;
+    unordered_map<string, int> dictionary;
     int i=0;
+    while(i<encodedString.size()) {
+        if(encodedString[i]=='}'){
+            break;
+        }else if(encodedString[i]=='{' || encodedString[i]==',' || encodedString[i]==':'){
+            i+=1;
+        }else{
+            string number;
+            number+=encodedString[i];
+            int numberInt = stoi(number);
+            encodedNumbers.push_back(numberInt);
+            encodedLetters.push_back(encodedString[i+2]);
+            i+=3;
+        }
+    }
+
+
+    //process for saving in the dictionary
+    i=0;
+    while(i<dictionaryString.size()){
+        if((dictionaryString[i]==',')&&(dictionaryString[i+1]=='}')){
+            break;
+        }else if(dictionaryString[i]=='{'){
+            i+=1;
+        }else{
+            string keyGet;
+            int temp=i;
+            int extraStr=0;
+            while(temp<dictionaryString.size()) {
+                if (dictionaryString[temp] == ':') {
+                    if(dictionaryString[temp-1]==','){
+                        keyGet="NU";
+                    }
+                    extraStr+=1;
+                    break;
+                }else{
+                    keyGet+=dictionaryString[temp];
+                    extraStr+=1;
+                    temp+=1;
+                }
+            }
+            i+=extraStr;
+            //for storing all int strings as int
+            int valueDic;
+            char currentInt=dictionaryString[i];
+            int extras=0;
+            int currentPosInt=i;
+            string valueAsStr="";
+
+            while(currentPosInt<dictionaryString.size()){
+                if(dictionaryString[currentPosInt]==','){
+                    if(dictionaryString[currentPosInt+1]=='}'){
+                        extras+=1;
+                    }
+                    extras+=1;
+                    break;
+                } else {
+                    valueAsStr+=dictionaryString[currentPosInt];
+                    extras+=1;
+                    currentPosInt++;
+                }
+            }
+            valueDic=stoi(valueAsStr);
+            dictionary[keyGet]=valueDic;
+            i+=extras;
+        }
+    }
+
+    i=0;
     vector<string> list;
     auto [values, keys] = reorderMap(dictionary);
     while(i<encodedNumbers.size()){
@@ -87,7 +159,11 @@ vector<string> LZ78::decoder(vector<int> encodedNumbers, vector<char> encodedLet
 
         i++;
     }
-    return list;
+    string decompressed;
+    for(int cont=0;cont<list.size();cont++){
+        decompressed+=list[cont];
+    }
+    return decompressed;
 
 }
 //converts the encoded string into a string
@@ -136,13 +212,18 @@ auto encoding(string stringToEncode){
     }
 
     string encodedString = stringDic(encodedLetters,encodedNumbers);
+    //converts dictionary unordered map into a string format
+    string dictionaryString="{";
+    for(auto it = dictionary.cbegin();it!=dictionary.cend();++it){
+        dictionaryString+=(*it).first+":"+to_string((*it).second)+",";
+    }
+    dictionaryString+="}";
+
     struct returns{
-        vector<int> eNumbers;
-        vector<char> eLetters;
         string encoded;
-        unordered_map<string, int> diC;
+        string dictionary;
     };
-    return returns{encodedNumbers,encodedLetters,encodedString,dictionary};
+    return returns{encodedString,dictionaryString};
 }
 
 void LZ78::compressTofile(string fileName, string compressedFileName){
@@ -159,7 +240,7 @@ void LZ78::compressTofile(string fileName, string compressedFileName){
             character = inputStream.get();
             fileData += character;
         }
-        auto [eNumbers, eLetters, encodedString, dictionary]=encoding(fileData);
+        auto [encodedString, stringDictionary]=encoding(fileData);
         salida_comprimida = encodedString;
 
     }
@@ -172,18 +253,28 @@ void LZ78::decompressTofile(string compressedFileName, string decompressedFileNa
     char character;
     vector <int> output_code;
     string  fileData;
-    string salida_descomprimida;
     outputStream.open(decompressedFileName, ios::binary);
     inputStream.open(compressedFileName, ios::binary);
     while (!inputStream.eof()) {
         character = inputStream.get();
         fileData += character;
     }
-    vector<string> decodedString = decoder(eNumbers, eLetters, dictionary);
-    for(int i=0;i<decodedString.size()-1;i++){
-        salida_descomprimida+=decodedString[i];
+    string encodedString;
+    string stringDictionary;
+    bool next =false;
+    for(int i=0;i<fileData.size();i++){
+        if(fileData[i]=='}' && !next){
+            next=true;
+        }else if (fileData[i]!='}' && !next){
+            encodedString+=fileData[i];
+        }else if(next){
+            stringDictionary+=fileData[i];
+        }
     }
-    outputStream << salida_descomprimida;
+
+    string decodedString = decoder(encodedString, stringDictionary);
+
+    outputStream << decodedString;
     //cout << salida_descomprimida.length();
     outputStream.flush();
     outputStream.close();

@@ -65,6 +65,7 @@ void Huffman::compressTofile(string InputfileName ,string OutputfileName) {
     stringstream stringStream(file);
 
     while (stringStream.good()) {
+        //10111101
         bitset<8> bits;
         stringStream >> bits;
         char c = char(bits.to_ulong());

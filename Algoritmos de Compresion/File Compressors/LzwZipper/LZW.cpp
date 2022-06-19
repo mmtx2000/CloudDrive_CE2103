@@ -113,7 +113,8 @@ void LZW::compressTofile(string fileName, string compressedFileName) {
         fileData += character;
     }
 
-    output_code = encoding(fileData);
+    output_code = encoding(fileData); //vector de enteros en base binaria
+
 
     for (int i = 0; i < output_code.size(); i++) {
         salida_comprimida += to_string(output_code[i]);
@@ -121,6 +122,8 @@ void LZW::compressTofile(string fileName, string compressedFileName) {
             salida_comprimida +="-";
         }
     }
+    string compressedString;
+
     outputStream << salida_comprimida;
     outputStream.flush();
     outputStream.close();

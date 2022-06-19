@@ -1,4 +1,4 @@
-# Install script for directory: /home/pablo/CLionProjects/Proyecto_3/Finalizado/ToLZWAlgorithm
+# Install script for directory: /home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/File Compressors/LzwZipper
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pablo/CLionProjects/Proyecto_3/Finalizado/ToLZWAlgorithm/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/File Compressors/LzwZipper/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

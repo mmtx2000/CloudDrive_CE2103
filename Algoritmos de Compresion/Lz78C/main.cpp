@@ -61,8 +61,80 @@ int getLowestIndex(vector<int> values, int number){
     return index;
 }
 //decodes an encoded string
-vector<string> decoder(vector<int> encodedNumbers, vector<char> encodedLetters, unordered_map<string, int> dictionary){
+string decoder(string encodedString, string dictionaryString){
+
+    vector<char> encodedLetters;
+    vector<int> encodedNumbers;
+    unordered_map<string, int> dictionary;
     int i=0;
+    while(i<encodedString.size()) {
+        if(encodedString[i]=='}'){
+            break;
+        }else if(encodedString[i]=='{' || encodedString[i]==',' || encodedString[i]==':'){
+            i+=1;
+        }else{
+            string number;
+            number+=encodedString[i];
+            int numberInt = stoi(number);
+            encodedNumbers.push_back(numberInt);
+            encodedLetters.push_back(encodedString[i+2]);
+            i+=3;
+        }
+    }
+
+
+    //process for saving in the dictionary
+    i=0;
+    while(i<dictionaryString.size()){
+        if((dictionaryString[i]==',')&&(dictionaryString[i+1]=='}')){
+            break;
+        }else if(dictionaryString[i]=='{'){
+            i+=1;
+        }else{
+            string keyGet;
+            int temp=i;
+            int extraStr=0;
+            while(temp<dictionaryString.size()) {
+                if (dictionaryString[temp] == ':') {
+                    if(dictionaryString[temp-1]==','){
+                        keyGet="NU";
+                    }
+                    extraStr+=1;
+                    break;
+                }else{
+                    keyGet+=dictionaryString[temp];
+                    extraStr+=1;
+                    temp+=1;
+                }
+            }
+            i+=extraStr;
+            //for storing all int strings as int
+            int valueDic;
+            char currentInt=dictionaryString[i];
+            int extras=0;
+            int currentPosInt=i;
+            string valueAsStr="";
+
+            while(currentPosInt<dictionaryString.size()){
+                if(dictionaryString[currentPosInt]==','){
+                    if(dictionaryString[currentPosInt+1]=='}'){
+                        extras+=1;
+                    }
+                    extras+=1;
+                    break;
+                } else {
+                    valueAsStr+=dictionaryString[currentPosInt];
+                    extras+=1;
+                    currentPosInt++;
+                }
+            }
+            valueDic=stoi(valueAsStr);
+            dictionary[keyGet]=valueDic;
+            i+=extras;
+        }
+    }
+
+    i=0;
     vector<string> list;
     auto [values, keys] = reorderMap(dictionary);
     while(i<encodedNumbers.size()){
@@ -82,7 +154,11 @@ vector<string> decoder(vector<int> encodedNumbers, vector<char> encodedLetters, 
 
         i++;
     }
-    return list;
+    string decompressed;
+    for(int cont=0;cont<list.size();cont++){
+        decompressed+=list[cont];
+    }
+    return decompressed;
 
 }
 //converts the encoded string into a string
@@ -131,13 +207,20 @@ auto encoding(string stringToEncode){
     }
 
     string encodedString = stringDic(encodedLetters,encodedNumbers);
+
+    //converts dictionary unordered map into a string format
+    string dictionaryString="{";
+    for(auto it = dictionary.cbegin();it!=dictionary.cend();++it){
+        dictionaryString+=(*it).first+":"+to_string((*it).second)+",";
+    }
+    dictionaryString+="}";
+
+
     struct returns{
-        vector<int> eNumbers;
-        vector<char> eLetters;
         string encoded;
-        unordered_map<string, int> diC;
+        string dictionary;
     };
-    return returns{encodedNumbers,encodedLetters,encodedString,dictionary};
+    return returns{encodedString,dictionaryString};
 }
 
 
@@ -149,17 +232,13 @@ int main() {
     stringToEncode="ABRACADABRARABARABARA";
 
     //encoded string
-    auto [eNumbers, eLetters, encodedString, dictionary]=encoding(stringToEncode);
-    cout << encodedString << endl;
+    auto [encodedString, dictionaryString]=encoding(stringToEncode);
+    cout << "Encoded string value:\n"+encodedString+"\nDictionary:\n"+dictionaryString << endl;
 
     //decoded message
-    vector<string> decodedString = decoder(eNumbers, eLetters, dictionary);
-    string dString="";
-    for(int i=0;i<decodedString.size()-1;i++){
-        dString+=decodedString[i];
-    }
-    cout << "\n\ndecoded string: \n" << endl;
-    cout << dString << endl;
+    string decodedString = decoder(encodedString, dictionaryString);
+
+    cout << "\ndecoded string: "+decodedString<< endl;
 
     return 0;
 }

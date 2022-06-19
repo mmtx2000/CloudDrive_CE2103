@@ -23,9 +23,7 @@ public:
 
     int getLowestIndex(std::vector<int> values, int number);
 
-    std::vector<string>
-    decoder(std::vector<int> encodedNumbers, std::vector<char> encodedLetters,
-            std::unordered_map<string, int> dictionary);
+    string decoder(string encodedString, string dictionaryString);
 
     void compressTofile(string fileName, string compressedFileName);
 

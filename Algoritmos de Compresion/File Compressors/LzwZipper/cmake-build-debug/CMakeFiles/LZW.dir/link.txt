@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/LZW.dir/main.cpp.o CMakeFiles/LZW.dir/LZW.cpp.o -o LZW 

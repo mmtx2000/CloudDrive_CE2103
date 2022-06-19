@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/LZ78.dir/main.cpp.o CMakeFiles/LZ78.dir/LZ78.cpp.o -o LZ78 
