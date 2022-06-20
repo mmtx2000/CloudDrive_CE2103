@@ -1,6 +1,4 @@
-//
-// Created by zawawy on 12/22/18.
-//
+
 
 #ifndef HUFFMANCODING_NODE_H
 #define HUFFMANCODING_NODE_H

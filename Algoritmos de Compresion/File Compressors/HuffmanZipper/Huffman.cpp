@@ -1,6 +1,4 @@
-//
-// Created by zawawy on 12/22/18.
-//
+
 
 #include "Huffman.h"
 
@@ -9,11 +7,19 @@
 #define CHARACTER_CODE_SEPERATOR char(130)
 #define HEADER_ENTRY_SEPERATOR char(131)
 #define HEADER_TEXT_SEPERATOR char(132)
-
+/**
+ *
+ * @param node1
+ * @param node2
+ * @return
+ */
 int Huffman::myCompartor::operator()(Node *node1, Node *node2) {
     return node1->getFrequency() > node2->getFrequency();
 }
-
+/**
+ *
+ * @param frequencyMap
+ */
 void Huffman::huffer(unordered_map<char, int> frequencyMap) {
     priority_queue <Node *, vector<Node *>, myCompartor> HufferQueue;
     string tempString;
@@ -33,7 +39,11 @@ void Huffman::huffer(unordered_map<char, int> frequencyMap) {
     }
     encodeCharacters(HufferQueue.top(), tempString);
 }
-
+/**
+ *
+ * @param rootNode Los Nodos que forman parte del Arbol de Huffman
+ * @param codeString Asigna el valor binario correspondiente a las ramas u hojas del nodo.
+ */
 void Huffman::encodeCharacters(Node *rootNode, string codeString) {
 
     if (!rootNode)
@@ -45,7 +55,11 @@ void Huffman::encodeCharacters(Node *rootNode, string codeString) {
     encodeCharacters(rootNode->getLeft(), codeString + "0");
     encodeCharacters(rootNode->getRight(), codeString + "1");
 }
-
+/**
+ *
+ * @param InputfileName ALmacena la direccion del archivo que se quiere comprimir.
+ * @param OutputfileName Almacena la direccion donde se va almacenar el archivo resultante de la copmpresión.
+ */
 void Huffman::compressTofile(string InputfileName ,string OutputfileName) {
 
     char character;
@@ -65,7 +79,6 @@ void Huffman::compressTofile(string InputfileName ,string OutputfileName) {
     stringstream stringStream(file);
 
     while (stringStream.good()) {
-        //10111101
         bitset<8> bits;
         stringStream >> bits;
         char c = char(bits.to_ulong());
@@ -76,7 +89,10 @@ void Huffman::compressTofile(string InputfileName ,string OutputfileName) {
     outputStream.flush();
     outputStream.close();
 }
-
+/**
+ * En este metodo se agregan los datos del nodo raiz que genera el arbol de Huffman
+ * @param outputStream Este parametro apunta al archivo de dsalida en la ejecucion de la compresionm
+ */
 void Huffman::writeHeader(ofstream &outputStream) {
     for (const auto &item : codeMap)
         outputStream << item.first << CHARACTER_CODE_SEPERATOR << item.second << HEADER_ENTRY_SEPERATOR;
@@ -100,7 +116,10 @@ void Huffman::deHuffer(string compressedFileName, string decompressedFileName) {
 
 
 }
-
+/**
+ *
+ * @param inputStream Es la varibale de tipo fstream que se usa para generar el archivo resultante de la descompresion.
+ */
 void Huffman::readHeader(ifstream &inputStream) {
     codeMap.clear();
     char character;
@@ -118,9 +137,12 @@ void Huffman::readHeader(ifstream &inputStream) {
         inputStream.get(character);
     }
 }
-
+/**
+ *
+ * @param encodingMap Es el map que se usa para reconstruir el arbol de Huffman necesario para decodificar el codigo binario de Huiffman.
+ * @return EL arbol de Huffman
+ */
 Node *Huffman::buildDecodingTree(unordered_map<char, string> encodingMap) {
-
     Node *rootNode = new Node(INTERNAL_NODE_CHARACTER);
     Node *previousNode;
 
@@ -153,7 +175,13 @@ Node *Huffman::buildDecodingTree(unordered_map<char, string> encodingMap) {
     }
     return rootNode;
 }
-
+/**
+ *
+ * @param codeString Es el string que almacena los datos del archivo que se va descomprimir.
+ * @param rootNode Es la raiz del arbol que se necesita para hacer la decodificacion de Huffman.
+ * @param decompressedFileName Este metodo recibe como parametros el codigo de Huffman que se almaceno en
+ *
+ */
 void Huffman::decompressToFile(string codeString, Node *rootNode, string decompressedFileName) {
     ofstream outputStream;
     outputStream.open(decompressedFileName, ios::out);

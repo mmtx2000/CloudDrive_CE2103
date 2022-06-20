@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78/cmake-build-debug"
+			"value" : "/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -591,7 +591,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78"
+			"value" : "/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -831,7 +831,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "LZ78_Algorithm"
+			"value" : "HuffmanCoding"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1114,7 +1114,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "LZ78_Algorithm_BINARY_DIR",
+			"name" : "HuffmanCoding_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1123,10 +1123,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78/cmake-build-debug"
+			"value" : "/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/cmake-build-debug"
 		},
 		{
-			"name" : "LZ78_Algorithm_IS_TOP_LEVEL",
+			"name" : "HuffmanCoding_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1138,7 +1138,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "LZ78_Algorithm_SOURCE_DIR",
+			"name" : "HuffmanCoding_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1147,7 +1147,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78"
+			"value" : "/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper"
 		}
 	],
 	"kind" : "cache",

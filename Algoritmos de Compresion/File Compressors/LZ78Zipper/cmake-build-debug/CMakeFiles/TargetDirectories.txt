@@ -1,3 +1,0 @@
-/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78/cmake-build-debug/CMakeFiles/LZ78_Algorithm.dir
-/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78/cmake-build-debug/CMakeFiles/rebuild_cache.dir

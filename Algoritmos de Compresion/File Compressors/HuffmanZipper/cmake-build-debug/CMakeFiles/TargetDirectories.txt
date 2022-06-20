@@ -1,3 +1,3 @@
-/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/File Compressors/HuffmanZipper/cmake-build-debug/CMakeFiles/HuffmanCoding.dir
-/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/File Compressors/HuffmanZipper/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/File Compressors/HuffmanZipper/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/cmake-build-debug/CMakeFiles/HuffmanCoding.dir
+/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/cmake-build-debug/CMakeFiles/rebuild_cache.dir

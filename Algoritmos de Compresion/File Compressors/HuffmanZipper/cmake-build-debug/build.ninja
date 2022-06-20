@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/cmake-build-debug/
+cmake_ninja_workdir = /home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target HuffmanCoding
 
@@ -49,46 +49,46 @@ cmake_ninja_workdir = /home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-co
 
 build cmake_object_order_depends_target_HuffmanCoding: phony || CMakeFiles/HuffmanCoding.dir
 
-build CMakeFiles/HuffmanCoding.dir/FrequencyCounter.cpp.o: CXX_COMPILER__HuffmanCoding_Debug /home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/FrequencyCounter.cpp || cmake_object_order_depends_target_HuffmanCoding
+build CMakeFiles/HuffmanCoding.dir/FrequencyCounter.cpp.o: CXX_COMPILER__HuffmanCoding_Debug /home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/FrequencyCounter.cpp || cmake_object_order_depends_target_HuffmanCoding
   DEP_FILE = CMakeFiles/HuffmanCoding.dir/FrequencyCounter.cpp.o.d
   FLAGS = -g -std=gnu++14
-  INCLUDES = -I/home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/.
+  INCLUDES = -I/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/.
   OBJECT_DIR = CMakeFiles/HuffmanCoding.dir
   OBJECT_FILE_DIR = CMakeFiles/HuffmanCoding.dir
   TARGET_COMPILE_PDB = CMakeFiles/HuffmanCoding.dir/
   TARGET_PDB = HuffmanCoding.pdb
 
-build CMakeFiles/HuffmanCoding.dir/main.cpp.o: CXX_COMPILER__HuffmanCoding_Debug /home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/main.cpp || cmake_object_order_depends_target_HuffmanCoding
+build CMakeFiles/HuffmanCoding.dir/main.cpp.o: CXX_COMPILER__HuffmanCoding_Debug /home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/main.cpp || cmake_object_order_depends_target_HuffmanCoding
   DEP_FILE = CMakeFiles/HuffmanCoding.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++14
-  INCLUDES = -I/home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/.
+  INCLUDES = -I/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/.
   OBJECT_DIR = CMakeFiles/HuffmanCoding.dir
   OBJECT_FILE_DIR = CMakeFiles/HuffmanCoding.dir
   TARGET_COMPILE_PDB = CMakeFiles/HuffmanCoding.dir/
   TARGET_PDB = HuffmanCoding.pdb
 
-build CMakeFiles/HuffmanCoding.dir/Node.cpp.o: CXX_COMPILER__HuffmanCoding_Debug /home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/Node.cpp || cmake_object_order_depends_target_HuffmanCoding
+build CMakeFiles/HuffmanCoding.dir/Node.cpp.o: CXX_COMPILER__HuffmanCoding_Debug /home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/Node.cpp || cmake_object_order_depends_target_HuffmanCoding
   DEP_FILE = CMakeFiles/HuffmanCoding.dir/Node.cpp.o.d
   FLAGS = -g -std=gnu++14
-  INCLUDES = -I/home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/.
+  INCLUDES = -I/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/.
   OBJECT_DIR = CMakeFiles/HuffmanCoding.dir
   OBJECT_FILE_DIR = CMakeFiles/HuffmanCoding.dir
   TARGET_COMPILE_PDB = CMakeFiles/HuffmanCoding.dir/
   TARGET_PDB = HuffmanCoding.pdb
 
-build CMakeFiles/HuffmanCoding.dir/Huffman.cpp.o: CXX_COMPILER__HuffmanCoding_Debug /home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/Huffman.cpp || cmake_object_order_depends_target_HuffmanCoding
+build CMakeFiles/HuffmanCoding.dir/Huffman.cpp.o: CXX_COMPILER__HuffmanCoding_Debug /home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/Huffman.cpp || cmake_object_order_depends_target_HuffmanCoding
   DEP_FILE = CMakeFiles/HuffmanCoding.dir/Huffman.cpp.o.d
   FLAGS = -g -std=gnu++14
-  INCLUDES = -I/home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/.
+  INCLUDES = -I/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/.
   OBJECT_DIR = CMakeFiles/HuffmanCoding.dir
   OBJECT_FILE_DIR = CMakeFiles/HuffmanCoding.dir
   TARGET_COMPILE_PDB = CMakeFiles/HuffmanCoding.dir/
   TARGET_PDB = HuffmanCoding.pdb
 
-build CMakeFiles/HuffmanCoding.dir/HuffmanUtility.cpp.o: CXX_COMPILER__HuffmanCoding_Debug /home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/HuffmanUtility.cpp || cmake_object_order_depends_target_HuffmanCoding
+build CMakeFiles/HuffmanCoding.dir/HuffmanUtility.cpp.o: CXX_COMPILER__HuffmanCoding_Debug /home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/HuffmanUtility.cpp || cmake_object_order_depends_target_HuffmanCoding
   DEP_FILE = CMakeFiles/HuffmanCoding.dir/HuffmanUtility.cpp.o.d
   FLAGS = -g -std=gnu++14
-  INCLUDES = -I/home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/.
+  INCLUDES = -I/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/.
   OBJECT_DIR = CMakeFiles/HuffmanCoding.dir
   OBJECT_FILE_DIR = CMakeFiles/HuffmanCoding.dir
   TARGET_COMPILE_PDB = CMakeFiles/HuffmanCoding.dir/
@@ -116,7 +116,7 @@ build HuffmanCoding: CXX_EXECUTABLE_LINKER__HuffmanCoding_Debug CMakeFiles/Huffm
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/cmake-build-debug && /snap/clion/193/bin/cmake/linux/bin/ccmake -S/home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master -B/home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/cmake-build-debug
+  COMMAND = cd /home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/cmake-build-debug && /snap/clion/193/bin/cmake/linux/bin/ccmake -S/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper -B/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/cmake-build-debug
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -128,7 +128,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/cmake-build-debug && /snap/clion/193/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master -B/home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/cmake-build-debug
+  COMMAND = cd /home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/cmake-build-debug && /snap/clion/193/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper -B/home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -144,7 +144,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /home/pablo/CLionProjects/Proyecto_3/Finalizado/huffman-coding-zipper-master/cmake-build-debug
+# Folder: /home/pablo/CLionProjects/Proyecto_3/Finalizado/HuffmanZipper/cmake-build-debug
 
 build all: phony HuffmanCoding
 

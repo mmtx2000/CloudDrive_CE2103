@@ -1,6 +1,4 @@
-//
-// Created by zawawy on 12/25/18.
-//
+
 #include <string.h>
 #include <iostream>
 #include <unordered_map>

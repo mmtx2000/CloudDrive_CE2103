@@ -16,23 +16,14 @@ int main()
         huffman.huffer(frequencyCounter.getFrequencyMap());
         huffman.compressTofile("/home/pablo/CLionProjects/Proyecto_3/BorradorProyecto3/cmake-build-debug/prueba_1.jpg",
                                "/home/pablo/CLionProjects/Proyecto_3/BorradorProyecto3/cmake-build-debug/salida23.zip");
-        /**
-        cout <<"Time taken: "<<(1.0*(clock() - tStart)/CLOCKS_PER_SEC)<<"sec"<<endl;
-        cout << "Input File Size : "<<filesize("../input.txt")<<" bytes."<<endl;
-        cout<< "Compressed File Size : "<<filesize("../output.txt")<<" bytes."<<endl;
-        cout<< "Compression Ratio : "<<(1.0*filesize("../output.txt")/filesize("../input.txt"))<<endl;
-        **/
+
          }
     else if(workingMode == "decompress")
     {
         clock_t tStart = clock();
         huffman.deHuffer("/home/pablo/CLionProjects/Proyecto_3/BorradorProyecto3/cmake-build-debug/salida23.zip",
                          "/home/pablo/CLionProjects/Proyecto_3/BorradorProyecto3/cmake-build-debug/salida2333.jpg");
-        /**
-        cout <<"Time taken: "<<(1.0*(clock() - tStart)/CLOCKS_PER_SEC)<<"sec"<<endl;
-        cout << "Input File (Compressed) Size : "<<filesize("../output.txt")<<" bytes."<<endl;
-        cout<< "DeCompressed File Size : "<<filesize("../output2.txt")<<" bytes."<<endl;
-            **/
+
          }
 
 
