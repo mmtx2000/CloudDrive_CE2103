@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import HomeScreen from './components/homeScreen';
 import LoginScreen from './components/loginScreen';
 import RegisterScreen from './components/registerScreen';
-import UserScreen from './components/userScreen';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,7 +18,7 @@ root.render(
       <Route path="/" element={<HomeScreen />} />
       <Route path="login" element={<LoginScreen />} />
       <Route path="register" element={<RegisterScreen/>} />
-      <Route path='user' element={<UserScreen/>}/>
+
       
     </Routes>
   </React.StrictMode>
