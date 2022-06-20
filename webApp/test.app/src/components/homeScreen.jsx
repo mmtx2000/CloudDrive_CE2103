@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 
+
+
 class HomeScreen extends Component {
     state = {  } 
+
+   
     render() { 
         return <div className='div'  >
         <div style={{
@@ -24,6 +28,7 @@ class HomeScreen extends Component {
         
       }}>
         <Link to= "login"><button className = "btn btn-secondary btn-sm">login</button></Link>
+        
         </div>
        
     </div>;
