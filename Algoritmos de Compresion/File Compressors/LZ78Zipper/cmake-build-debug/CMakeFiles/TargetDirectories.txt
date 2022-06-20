@@ -1,3 +1,3 @@
-/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/File Compressors/LZ78Zipper/cmake-build-debug/CMakeFiles/LZ78.dir
-/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/File Compressors/LZ78Zipper/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/File Compressors/LZ78Zipper/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78/cmake-build-debug/CMakeFiles/LZ78_Algorithm.dir
+/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78/cmake-build-debug/CMakeFiles/rebuild_cache.dir

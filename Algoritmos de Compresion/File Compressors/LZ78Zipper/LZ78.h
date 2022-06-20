@@ -1,34 +1,24 @@
-//
-// Created by pablo on 16/06/22.
-//
 
-#ifndef LZ78_LZ78_H
-#define LZ78_LZ78_H
+#ifndef LZ78_ALGORITHM_LZ78_H
+#define LZ78_ALGORITHM_LZ78_H
 
+#include "PCRFile.h"
 
-#include <unordered_map>
-#include <iostream>
-#include <vector>
-#include <unordered_map>
-#include <map>
-#include <sstream>
-#include <fstream>
+/**
+  * \brief Compress a file using a dictionary of string occurrences.
+  * \param fileName - A string that holds the file name to be compressed.
+  * \param myFile - The informations about the original file.
+  * \return true if the compression goes right, else otherwise.
+  */
+bool compressLZ78 (const char *fileName, FileInfo *myFile, const char *fileOutput);
 
-
-using namespace std;
-class LZ78 {
-public:
-    //bool inMap(std::unordered_map<string, int> map, std::__cxx11::basic_string<char> key);
-
-
-    int getLowestIndex(std::vector<int> values, int number);
-
-    string decoder(string encodedString, string dictionaryString);
-
-    void compressTofile(string fileName, string compressedFileName);
-
-    void decompressTofile(string compressedFileName, string decompressedFileName);
-};
+/**
+  * \brief Decompress a file using a dictionary of string occurrences.
+  * \param fileName - A string that holds the file name to be compressed.
+  * \param myFile - The informations about the original file.
+  * \return true if the decompression goes right, else otherwise.
+  */
+bool decompressLZ78 (const char *fileName, FileInfo *myFile, const char *fileOutput);
 
 
-#endif //LZ78_LZ78_H
+#endif //LZ78_ALGORITHM_LZ78_H

@@ -1,4 +1,4 @@
-# Install script for directory: /home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/File Compressors/LZ78Zipper
+# Install script for directory: /home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/File Compressors/LZ78Zipper/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

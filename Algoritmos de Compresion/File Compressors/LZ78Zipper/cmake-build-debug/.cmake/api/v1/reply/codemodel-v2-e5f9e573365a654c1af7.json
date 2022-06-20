@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "LZ78",
+					"name" : "LZ78_Algorithm",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "LZ78::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-LZ78-Debug-6a206b84cd07d26b1bbd.json",
-					"name" : "LZ78",
+					"id" : "LZ78_Algorithm::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LZ78_Algorithm-Debug-a9e00964022cb8f59406.json",
+					"name" : "LZ78_Algorithm",
 					"projectIndex" : 0
 				}
 			]
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/File Compressors/LZ78Zipper/cmake-build-debug",
-		"source" : "/home/dansecan25/Documents/Proyecto3/CloudDrive_CE2103/Algoritmos de Compresion/File Compressors/LZ78Zipper"
+		"build" : "/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78/cmake-build-debug",
+		"source" : "/home/pablo/Escritorio/Proyecto 3/TECloudDrive-main/LZ78"
 	},
 	"version" : 
 	{
